@@ -2,25 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- App title -->
   <title>My App</title>
 
-  <!-- Full screen on iOS -->
+  <!-- iOS fullscreen -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- App icon -->
   <link rel="apple-touch-icon" href="icon.png">
-
-  <!-- Manifest -->
   <link rel="manifest" href="manifest.json">
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>🚀 My iPhone App</h1>
-  <p>This runs full screen.</p>
+
+  <!-- iOS Nav Bar -->
+  <header class="nav">
+    <h1>My App</h1>
+  </header>
+
+  <!-- Content -->
+  <main>
+    <div class="card">
+      <h2>Welcome</h2>
+      <p>This feels like a real iOS app.</p>
+      <button>Continue</button>
+    </div>
+  </main>
+
+  <!-- iOS Tab Bar -->
+  <footer class="tabbar">
+    <span class="active">Home</span>
+    <span>Search</span>
+    <span>Settings</span>
+  </footer>
+
 </body>
 </html>
