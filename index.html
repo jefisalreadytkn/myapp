@@ -4,43 +4,65 @@
   <meta charset="UTF-8">
   <title>My App</title>
 
-  <!-- iOS fullscreen -->
+  <!-- iOS PWA -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Icons / Manifest -->
   <link rel="apple-touch-icon" href="icon.png">
   <link rel="manifest" href="manifest.json">
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- iOS Nav Bar -->
+  <!-- NAV BAR -->
   <header class="nav">
-    <h1>My App</h1>
+    <h1 id="title">Home</h1>
   </header>
 
-  <!-- Content -->
+  <!-- PAGES -->
   <main>
-    <div class="card">
-      <h2>GTA Tools</h2>
-      <p>Open GTA V cheat codes in an app-style page.</p>
+    <section class="page active" id="home">
+      <div class="card">
+        <h2>Home</h2>
+        <p>This is a real iOS-style web app.</p>
+      </div>
+    </section>
 
-      <button onclick="location.href='radio.html'">
-        Open Cheats
-      </button>
-    </div>
+    <section class="page" id="explore">
+      <div class="card">
+        <h2>Explore</h2>
+        <p>Browse content here.</p>
+      </div>
+    </section>
+
+    <section class="page" id="profile">
+      <div class="card">
+        <h2>Profile</h2>
+        <p>User settings and info.</p>
+      </div>
+    </section>
   </main>
 
-  <!-- iOS Tab Bar -->
+  <!-- TAB BAR -->
   <footer class="tabbar">
-    <span class="active">Home</span>
-    <span>Browse</span>
-    <span>Settings</span>
+    <button class="tab active" onclick="switchTab('home','Home')">Home</button>
+    <button class="tab" onclick="switchTab('explore','Explore')">Explore</button>
+    <button class="tab" onclick="switchTab('profile','Profile')">Profile</button>
   </footer>
+
+  <!-- NAV SCRIPT -->
+  <script>
+    function switchTab(id, title) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+      document.getElementById('title').textContent = title;
+    }
+  </script>
 
 </body>
 </html>
