@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GTA Cheats</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .iframe-wrap {
+      width: 100%;
+      height: calc(100vh - 120px);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .fallback {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <header class="nav">
+    <h1>GTA Cheats</h1>
+  </header>
+
+  <!-- Attempt iframe -->
+  <main class="iframe-wrap">
+    <iframe
+      src="https://www.radiotimes.com/technology/gaming/gta-5-cheats-cheat-codes/"
+      onerror="showFallback()">
+    </iframe>
+
+    <!-- Fallback -->
+    <div class="fallback" id="fallback">
+      <div class="card">
+        <h2>Open Cheats</h2>
+        <p>This site can’t be embedded. Open it in-app instead.</p>
+
+        <button onclick="window.open(
+          'https://www.radiotimes.com/technology/gaming/gta-5-cheats-cheat-codes/',
+          '_blank'
+        )">
+          Open Site
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // If iframe is blocked, show fallback
+    setTimeout(() => {
+      const iframe = document.querySelector("iframe");
+      try {
+        if (!iframe.contentDocument) throw "blocked";
+      } catch {
+        showFallback();
+      }
+    }, 1200);
+
+    function showFallback() {
+      document.querySelector("iframe").style.display = "none";
+      document.getElementById("fallback").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
